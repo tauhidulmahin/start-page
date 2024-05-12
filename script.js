@@ -25,9 +25,9 @@ window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
        selector:".weatherWidget",
        apiKey:"J7LM8UHF9J6HJPF8VZH3HD9MS&contentType=json", //Sign up for your personal key
        location:"DHAKA, BANGLADESH", //Enter an address
-       unitGroup:"metric", //"us = Fahrenheit" or "metric = Degrees "
+       unitGroup:"metric", //"us" or "metric"
        forecastDays:5, //how many days forecast to show
-       title:"Dhaka,BD", //optional title to show in the 
+       title:"dhaka,BD", //optional title to show in the 
        showTitle:true, 
        showConditions:true
    });
@@ -40,6 +40,7 @@ window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
    })();
 
 
+
 //Photo Gallery
 
 let photoUrl = `https://picsum.photos/v2/list?page=2&limit=6`;
@@ -48,7 +49,7 @@ fetch(photoUrl)
     .then(data => {
         let photoGallery = "";
         for (const photo of data) {
-            photoGallery += `<img src= ${photo.download_url} width ="210px">`;
+            photoGallery += `<img src= ${photo.download_url} width ="210px" height = "150px">`;
         }
         const tbodyOfTable = document.querySelector("#fetchGallery");
         tbodyOfTable.innerHTML = photoGallery;
