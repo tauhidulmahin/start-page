@@ -43,13 +43,13 @@ window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
 
 //Photo Gallery
 
-let photoUrl = `https://picsum.photos/v2/list?page=2&limit=6`;
+let photoUrl = `https://picsum.photos/v2/list?page=2&limit=56`;
 fetch(photoUrl)
     .then(response => response.json())
     .then(data => {
         let photoGallery = "";
         for (const photo of data) {
-            photoGallery += `<img src= ${photo.download_url} width ="210px" height = "150px">`;
+            photoGallery += `<img src= ${photo.download_url} width ="52px" height = "50px">`;
         }
         const tbodyOfTable = document.querySelector("#fetchGallery");
         tbodyOfTable.innerHTML = photoGallery;
